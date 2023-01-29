@@ -67,41 +67,77 @@ const root = document.getElementById("root");
 
 //custom components
 
-function TemporaryName() {
+// function TemporaryName() {
+//   return (
+//     <div>
+//       <img src="React-icon.png" alt="React Icon" width="50px" />
+//       <h1>Fun Facts about React</h1>
+//       <ul>
+//         <li>was first released in 2013</li>
+//         <li>was originally created by Jordan Walke</li>
+//         <li>maintained by Facebook</li>
+//         <li>powers thousands of enterprise apps, including mobile apps</li>
+//       </ul>
+//     </div>
+//   );
+// }
+
+//ReactDOM.render(<TemporaryName />, root);
+function Header() {
   return (
-    <div>
-      <img src="React-icon.png" alt="React Icon" width="50px" />
-      <h1>Fun Facts about React</h1>
-      <ul>
-        <li>was first released in 2013</li>
-        <li>was originally created by Jordan Walke</li>
-        <li>maintained by Facebook</li>
-        <li>powers thousands of enterprise apps, including mobile apps</li>
-      </ul>
-    </div>
+    <header>
+      <nav className="nav">
+        <img className="icon" src="React-icon.png" />
+        <ul className="nav-items">
+          <li>Pricing</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
   );
 }
-
-ReactDOM.render(<TemporaryName />, root);
+function Title() {
+  return <h1 className="title">Reasons why learn REACT.JS!</h1>;
+}
 function List() {
   return (
+    <ol className="list">
+      <li>To learn new skill</li>
+      <li>It is a great framework</li>
+      <li>To become front-end dev</li>
+    </ol>
+  );
+}
+function Content() {
+  return (
     <div>
-      <header>
-        <nav>
-          <img width="40px" src="React-icon.png" />
-        </nav>
-      </header>
-      <h1>Reasons why learn REACT.JS!</h1>
+      <Title />
       <h2>
-        <ol>
-          <li>To learn new skill</li>
-          <li>To learn framework</li>
-          <li>To learn to become front-end dev</li>
-        </ol>
+        <List />
       </h2>
-      <footer>© 2023 marcellones development. All rights reserved</footer>
     </div>
   );
 }
+function Footer() {
+  return (
+    <footer className="footer">
+      <small>© 2023 marcellones development. All rights reserved</small>
+    </footer>
+  );
+}
 
-ReactDOM.render(<List />, document.getElementById("root"));
+function Page() {
+  return (
+    <div className="content">
+      <Header />
+      <Content />
+      <Footer />
+    </div>
+  );
+}
+const roots = ReactDOM.createRoot(document.getElementById("root"));
+
+roots.render(<Page />);
+
+// ReactDOM.render(<Page />, document.getElementById("root"));
